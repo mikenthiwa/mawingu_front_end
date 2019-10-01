@@ -1,0 +1,2 @@
+export const LOGIN_REQUEST = "LOGIN_REQUEST";
+export const TASK_REQUEST = "TASK_REQUEST";

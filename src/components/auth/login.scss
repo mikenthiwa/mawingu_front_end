@@ -1,0 +1,112 @@
+.login-container {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, 10%);
+  width: 413px;
+  min-height: 413px;
+  background-color: #12A1F3;
+  border: 1px solid #12A1F3;
+  border-radius: 5px;
+  box-shadow: 0 3px 7px 2px lightblue;
+  padding: 0.5rem;
+  display: grid;
+  grid-template-rows: 1.5fr 2fr;
+
+  .login-header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    .mawinguImage {
+      width: 50%;
+    }
+    .header-label {
+      margin-top: 10px;
+      margin-bottom: 20px;
+      font-size: 30px;
+      font-weight: bold;
+      color: white;
+    }
+  }
+
+  .login-body {
+    display: flex;
+    flex-direction: column;
+
+    .login-form-input-container {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 18px;
+
+      .login-form-input {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        border-radius: 8px;
+
+        .input-icon {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          text-align: center;
+          background-color: rgb(255, 193, 24);;
+          flex-grow: 0.2;
+          border-bottom-left-radius: 3px;
+          border-top-left-radius: 3px;
+        }
+
+        input[type=text] {
+          width: 100%;
+          border: none;
+          height: 40px;
+          border-bottom-right-radius: 3px;
+          border-top-right-radius: 3px;
+        }
+
+        input[type=password] {
+          width: 100%;
+          border: none;
+          height: 40px;
+          border-bottom-right-radius: 3px;
+          border-top-right-radius: 3px;
+        }
+        .form-input {
+          .input-error {
+            border-bottom: 1px solid red;
+            border-top: 1px solid red;
+            border-right: 1px solid red;
+          }
+        }
+
+        .form-input {
+          flex-grow: 2;
+        }
+      }
+      .login-form-error-container {
+        width: 100%;
+        height: 30px;
+        background-color: #f8d7da;
+        color: #721c24;
+        margin-top: 10px;
+        align-items: center;
+        padding: 1px;
+      }
+      .no-error {
+        display: none;
+        background-color: white;
+      }
+    }
+    input[type=submit] {
+      width: 100%;
+      border: none;
+      height: 40px;
+      background-color: rgb(255, 193, 24);
+      color: white;
+      font-weight: 700;
+    }
+  }
+}
+
+

@@ -1,13 +1,18 @@
 import React from 'react'
 import {Route, Switch, BrowserRouter} from 'react-router-dom';
-import Home from '../views/home/home';
+import App from '../views/App';
+import Task from '../views/TasksView';
 
 const routes = () => (
   <BrowserRouter>
     <Switch>
       <Route
         exact path='/'
-        component={Home}
+        component={App}
+      />
+      <Route
+        path='/tasks'
+        component={Task}
       />
     </Switch>
   </BrowserRouter>
