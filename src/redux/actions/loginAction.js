@@ -19,11 +19,12 @@ export const login = (data, callback) => async dispatch => {
   dispatch(loginRequest());
   try {
     const response = await loginApi(data);
-    const { data: responseData } = response;
+    const { data: responseData, data: { accessToken }  } = response;
     dispatch(loginSuccess(responseData));
+    window.localStorage.setItem('token', accessToken);
     callback()
   } catch (e) {
     const { response: {data: error} } = e;
-    dispatch(loginFailure(error))
+    dispatch(loginFailure(error));
   }
 };

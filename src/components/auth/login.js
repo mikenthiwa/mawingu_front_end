@@ -13,11 +13,14 @@ class Login extends Component {
     password: ''
   };
 
-  notify = () => toast.success('Login Successfully');
+  notify = () => {
+    const {history} = this.props
+    toast.success('Login Successfully');
+    history.push('/tasks')
+  };
 
 
-
-  renderFormInput = (awesomeIcon, name, onChangeHandler) => {
+  renderFormInput = (awesomeIcon, name, onChangeHandler, type) => {
     const {loginReducer: {error: {error}}} = this.props;
     return (
       <div className="login-form-input-container">
@@ -27,8 +30,8 @@ class Login extends Component {
           </div>
           <div className="form-input">
             <input
-              className={`${error ? 'input-error': ''}`}
-              type="text"
+              className={`${error ? 'input-error': 'input'}`}
+              type={type}
               name={name}
               onChange={onChangeHandler}/>
           </div>
@@ -70,8 +73,8 @@ class Login extends Component {
 
   handleSubmit = (event) => {
     event.preventDefault();
-    const { login } = this.props;
-    login(this.state, () => this.notify());
+    const { login, history } = this.props;
+    login(this.state, () => this.notify() && history('/task'));
   };
 
   render() {
@@ -81,8 +84,8 @@ class Login extends Component {
           {this.renderFormHeader()}
         </div>
         <div className='login-body'>
-          {this.renderFormInput(faPhoneAlt, 'phone', this.handleOnchange)}
-          {this.renderFormInput(faLock, 'password', this.handleOnchange)}
+          {this.renderFormInput(faPhoneAlt, 'phone', this.handleOnchange, 'text')}
+          {this.renderFormInput(faLock, 'password', this.handleOnchange, 'password')}
           {this.renderFormButton(this.handleSubmit)}
         </div>
       </div>

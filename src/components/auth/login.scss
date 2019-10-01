@@ -64,6 +64,14 @@
           border-bottom-right-radius: 3px;
           border-top-right-radius: 3px;
         }
+
+        input[type=password] {
+          width: 100%;
+          border: none;
+          height: 40px;
+          border-bottom-right-radius: 3px;
+          border-top-right-radius: 3px;
+        }
         .form-input {
           .input-error {
             border-bottom: 1px solid red;

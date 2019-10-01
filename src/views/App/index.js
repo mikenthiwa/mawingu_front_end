@@ -1,25 +1,37 @@
 import React, {Component} from 'react';
 import { connect } from 'react-redux'
 import Auth from '../../components/auth/login';
+import TaskPage from '../TasksView';
 import { login } from '../../redux/actions/loginAction';
+
 import './home.scss';
 
 
 class App extends Component {
   render() {
-    const { login, loginReducer } = this.props;
+    const { login, loginReducer, history } = this.props;
+    const { token } = localStorage;
     return (
       <div className="app-container">
-        <div className="homeLoginContainer">
-          <Auth login={login} loginReducer={loginReducer}/>
-        </div>
+        {!token
+          ? <div className="homeLoginContainer">
+            <Auth
+              login={login}
+              loginReducer={loginReducer}
+              history={history}
+            />
+            </div>
+          : <div>
+             <TaskPage history={history}/>
+            </div>
+        }
       </div>
     );
   }
 }
 
 const mapDispatchToProps = () => ({
-  login
+  login,
 });
 
 const mapStateToProps = ({loginReducer}) => ({

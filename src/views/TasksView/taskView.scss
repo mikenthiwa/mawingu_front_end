@@ -1,0 +1,23 @@
+.task-view-container {
+  background-color: #F7F7F7;
+  height: 100vh;
+  .task-view-header {
+    display: grid;
+    grid-template-columns: 0.5fr 1fr 2.5fr;
+    height: 60px;
+    align-items: center;
+    padding-left: 20px;
+    background-color: white;
+    .logo {
+      .mawinguLogo {
+        width: 40px;
+      }
+    }
+    .nav-links {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      color: rgba(0,0,0,.7);
+    }
+  }
+}
